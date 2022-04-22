@@ -1,0 +1,262 @@
+:root {
+  --color1 : #191A19;
+  --color2 : #1E5128;
+  --color3 : #8B9A46;
+  --color4 : #D8E9A8;
+  --color5 : #fff;
+}
+
+.App {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* ------------- workSpace ------------- */
+.workSpace {
+  width: calc(100% - 300px);
+  background-color: var(--color1);
+}
+
+/* ------------ work detail ------------- */
+.workDescription {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.workDescription .title {
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 45px;
+  margin-bottom: 5px;
+  color: var(--color3);
+}
+
+.workDescription .description {
+  text-align: center;
+  margin-top: 5px;
+  color: var(--color4);
+}
+
+.workDescription .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 30px 0px 15px;
+  border-bottom: 1px solid var(--color3);
+  border-radius: 30px;
+  padding-bottom: 15px;
+}
+
+.workDescription .container .relatedTo{
+  text-transform: capitalize;
+  font-size: 20px;
+  color: var(--color3);
+}
+
+.workDescription .container .progress_bar_container {
+  display: inline-block;
+}
+
+.workDescription .container .progress_bar_container p {
+  text-transform: capitalize;
+  font-size: 20px;
+  color: var(--color3);
+}
+
+.workDescription .container .progress_bar_container .done {
+  color: var(--color4);
+} 
+
+.workDescription .container .progress_bar_container .progress_bar {
+  border: 1px solid var(--color2);
+  background-color: var(--color2);
+  border-radius: 8px;
+  padding: 7px;
+  display: inline;
+  position: relative;
+}
+
+.workDescription .container .progress_bar_container .progress_bar .percent {
+  position: absolute;
+  left: 89%;
+  bottom: 27px;
+  color: var(--color2);
+  font-size: 19px;
+  font-weight: 800;
+  width: 100%;
+  text-align: center;
+  background-color: var(--color4);
+  width: 50px;
+  border-radius: 5px;
+}
+
+.workDescription .container .progress_bar_container .progress_bar .stars .star {
+  color: var(--color4);
+}
+
+/* ------------- sidebar ------------- */
+
+.side-bar {
+  width: 320px;
+  height: 100vh;
+  background-color: var(--color1);
+  color: var(--color5);
+  box-shadow: inset 0px 0px 5px 1px var(--color5);
+}
+
+/* width */
+.side-bar ::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.side-bar ::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px var(--color4); 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+.side-bar ::-webkit-scrollbar-thumb {
+  background: var(--color3); 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.side-bar ::-webkit-scrollbar-thumb:hover {
+  background: var(--color2); 
+}
+
+.view-controller {
+  margin: 10px auto 0;
+  border-top: 1px var(--color3) solid;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.pet-select {
+  padding: 8px;
+  margin-left: 10px;
+  width: 170px;
+  font-size: 17px;
+  border-radius: 5px;
+}
+
+.logout .user-name {
+  text-transform: capitalize;
+  font-size: 25px;
+  margin: auto;
+  display: block;
+  width: fit-content;
+  margin-top: 10px;
+}
+
+.toggle-list {
+  margin: 10px auto 0;
+  border-top: 1px var(--color3) solid;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.toggle-list .list-title {
+  font-size: 24px;
+  width: fit-content;
+  margin: 0 auto 15px;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.toggle-list .list-title:hover {
+  color: var(--color3);
+} 
+
+.toggle-list .list-title .text {
+  margin-left: 10px;
+  font-weight: 700;
+}
+
+.list {
+  height: 460px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+}
+
+.list.hidden {
+  height: 0;
+}
+
+.list .Work ,
+.list .project {
+  padding-bottom: 5px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid white;
+    border-radius: 0px 15px;
+}
+
+.list .Work .status 
+.list .project .status {
+  color: var(--color3);
+}
+
+.list .Work .name ,
+.list .project .name  {
+    display: inline-block;
+    margin: 10px;
+    color: var(--color4);
+}
+
+.list .Work .name span ,
+.list .project .name span {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.list .Work .name span:hover ,
+.list .project .name span:hover {
+  color: var(--color3);
+}
+
+.progress_bar_container {
+  display: block;
+}
+
+.progress_bar_container p {
+  display: inline-block;
+  margin: 10px;
+}
+
+.progress_bar_container .done {
+  color: var(--color4);
+} 
+
+.progress_bar_container .progress_bar {
+  border: 1px solid var(--color2);
+  background-color: var(--color2);
+  border-radius: 8px;
+  padding: 7px;
+  display: inline;
+  position: relative;
+}
+
+.progress_bar_container .progress_bar .percent {
+  position: absolute;
+  left: 89%;
+  bottom: 27px;
+  color: var(--color2);
+  font-size: 19px;
+  font-weight: 800;
+  width: 100%;
+  text-align: center;
+  background-color: var(--color4);
+  width: 50px;
+  border-radius: 5px;
+}
+
+.progress_bar_container .progress_bar .stars .star {
+  color: var(--color4);
+}
