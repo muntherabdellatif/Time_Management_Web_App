@@ -1,7 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle , faCircle} from '@fortawesome/free-solid-svg-icons';
-import ProgressBar from "./progressBar";
+import ProgressBar from "../../share/progressBar";
 
 function Project (props) {
     return (

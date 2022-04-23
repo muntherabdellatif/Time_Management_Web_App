@@ -1,6 +1,6 @@
 import React from "react";
 import Project from "./project";
-import {userData} from "../../data/data"
+import {userData} from "../../../data/data"
 
 function ProjectList (props) {
     let projects = userData.projects ;

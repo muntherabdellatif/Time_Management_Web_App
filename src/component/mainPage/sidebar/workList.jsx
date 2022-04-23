@@ -1,6 +1,6 @@
 import React from "react";
 import Work from "./work";
-import {userData} from "../../data/data"
+import {userData} from "../../../data/data"
 
 function WorkList (props) {
     let works = userData.works ;

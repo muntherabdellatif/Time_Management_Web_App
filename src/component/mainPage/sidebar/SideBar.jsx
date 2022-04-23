@@ -3,7 +3,7 @@ import Logout from "./Logout";
 import MyWork from "./myWork";
 import MyProject from "./myProject";
 import ViewController from "./viewController"
-import { userData } from "../../data/data";
+import { userData } from "../../../data/data";
 
 function SideBar (props) {
     return (
