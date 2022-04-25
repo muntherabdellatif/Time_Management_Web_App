@@ -97,7 +97,39 @@
 
 /* daily repeat time */
 
-.showDailyTime {
+.showTime {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.showTime .repeatTime {
+  color: var(--color4);
+  font-size: 22px;
+  text-align: center;
+  background-color: var(--color2);
+  width: 220px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 90px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.showTime .repeatTime span {
+  color: var(--color3);
+  font-size: 60px;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.showTime .showDailyTime {
   padding-top: 50px;
   display: flex;
   flex-direction: column;
@@ -105,7 +137,7 @@
   justify-content: center;
 }
 
-.showDailyTime .hoursBar {
+.showTime .showDailyTime .hoursBar {
   position: relative;
   width: 480px;
   background-color: var(--color2);
@@ -117,7 +149,7 @@
   -o-border-radius: 10px;
 }
 
-.showDailyTime .hoursBar::after {
+.showTime .showDailyTime .hoursBar::after {
   content: "24";
   position: absolute;
   width: 20px;
@@ -131,7 +163,7 @@
   border-radius: 50% 50% 50% 2px;
 }
 
-.showDailyTime .hoursBar::before {
+.showTime .showDailyTime .hoursBar::before {
   content: "0";
   position: absolute;
   width: 20px;
@@ -145,7 +177,7 @@
   border-radius: 50% 50% 2px 50%;
 }
 
-.showDailyTime .hoursBar .time-container {
+.showTime .showDailyTime .hoursBar .time-container {
   position: relative;
   width: 100%;
   height: 100%;
@@ -157,17 +189,17 @@
   -o-border-radius: 10px;
 }
 
-.showDailyTime .hoursBar .time-container .time {
+.showTime .showDailyTime .hoursBar .time-container .time {
   position: absolute;
   height: 20px;
   background-color: var(--color4);
 }
 
-.showDailyTime .hoursBar .time-container .time.active {
+.showTime .showDailyTime .hoursBar .time-container .time.active {
   background-color: var(--color3);
 }
 
-.showDailyTime  .detail-container {
+.showTime .showDailyTime  .detail-container {
   background-color: var(--color2);
   width: 440px;
   height: fit-content;
@@ -176,7 +208,7 @@
   border-radius: 20px;
 }
 
-.showDailyTime .detail-container .time-detail {
+.showTime .showDailyTime .detail-container .time-detail {
   height: 50px;
   color: var(--color4);
   display: block;
@@ -185,7 +217,11 @@
   cursor: pointer;
 }
 
-.showDailyTime .detail-container .time-detail:not(:last-of-type) {
+.showTime .showDailyTime .detail-container .time-detail .status{
+  margin-right: 10px;
+}
+
+.showTime .showDailyTime .detail-container .time-detail:not(:last-of-type) {
   border-bottom: 1px solid var(--color3) ;
   border-radius: 20px;
   -webkit-border-radius: 20px;
@@ -194,7 +230,7 @@
   -o-border-radius: 20px;
 }
 
-.showDailyTime .detail-container .time-detail:not(:first-of-type) {
+.showTime .showDailyTime .detail-container .time-detail:not(:first-of-type) {
   margin-top: 20px;
 }
 
@@ -208,24 +244,20 @@
   box-shadow: inset 0px 0px 5px 1px var(--color5);
 }
 
-/* width */
 .side-bar ::-webkit-scrollbar {
   width: 10px;
 }
 
-/* Track */
 .side-bar ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px var(--color4); 
   border-radius: 10px;
 }
- 
-/* Handle */
+
 .side-bar ::-webkit-scrollbar-thumb {
   background: var(--color3); 
   border-radius: 10px;
 }
 
-/* Handle on hover */
 .side-bar ::-webkit-scrollbar-thumb:hover {
   background: var(--color2); 
 }

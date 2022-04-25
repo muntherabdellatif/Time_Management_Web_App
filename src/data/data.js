@@ -13,10 +13,11 @@ export const userData = {
       relatedTo: "skills",
       times: {
         repeat: "daily",
-        isRepeat: true,
-        repeatTime: 5,
+        isRepeat: false,
+        repeatTime: 0,
         time: [
           {
+            isDone: false,
             id: 1,
             startHour: 12,
             startMin: 45,
@@ -24,18 +25,12 @@ export const userData = {
             endMin: 0,
           },
           {
+            isDone: true,
             id: 2,
             startHour: 9,
             startMin: 0,
             endHour: 10,
             endMin: 0,
-          },
-          {
-            id: 3,
-            startHour: 6,
-            startMin: 30,
-            endHour: 8,
-            endMin: 15,
           },
         ],
       },
@@ -51,9 +46,10 @@ export const userData = {
       times: {
         repeat: "daily",
         isRepeat: true,
-        repeatTime: 5,
+        repeatTime: 20,
         time: [
           {
+            isDone: false,
             id: 1,
             startHour: 11,
             startMin: 45,
@@ -61,6 +57,7 @@ export const userData = {
             endMin: 0,
           },
           {
+            isDone: true,
             id: 2,
             startHour: 8,
             startMin: 0,
@@ -68,6 +65,7 @@ export const userData = {
             endMin: 30,
           },
           {
+            isDone: true,
             id: 3,
             startHour: 6,
             startMin: 20,
@@ -82,15 +80,96 @@ export const userData = {
       name: "work 3",
       description:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      progress: 50,
+      isDone: false,
+      relatedTo: "skills",
+      times: {
+        repeat: "daily",
+        isRepeat: true,
+        repeatTime: 1,
+        time: [
+          {
+            isDone: true,
+            id: 1,
+            startHour: 12,
+            startMin: 45,
+            endHour: 14,
+            endMin: 0,
+          },
+          {
+            isDone: false,
+            id: 2,
+            startHour: 9,
+            startMin: 0,
+            endHour: 10,
+            endMin: 0,
+          },
+          {
+            isDone: true,
+            id: 3,
+            startHour: 6,
+            startMin: 30,
+            endHour: 8,
+            endMin: 15,
+          },
+        ],
+      },
+    },
+    {
+      id: 4,
+      name: "work 4",
+      description:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      progress: 30,
+      isDone: false,
+      relatedTo: "health",
+      times: {
+        repeat: "daily",
+        isRepeat: true,
+        repeatTime: Infinity,
+        time: [
+          {
+            isDone: false,
+            id: 1,
+            startHour: 11,
+            startMin: 45,
+            endHour: 12,
+            endMin: 0,
+          },
+          {
+            isDone: true,
+            id: 2,
+            startHour: 8,
+            startMin: 0,
+            endHour: 9,
+            endMin: 30,
+          },
+          {
+            isDone: true,
+            id: 3,
+            startHour: 6,
+            startMin: 20,
+            endHour: 7,
+            endMin: 15,
+          },
+        ],
+      },
+    },
+    {
+      id: 5,
+      name: "work 5",
+      description:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
       progress: 30,
       isDone: false,
       relatedTo: "health",
       times: {
         repeat: "weekly",
         isRepeat: true,
-        repeatTime: 5,
+        repeatTime: 10,
         time: [
           {
+            isDone: false,
             id: 1,
             startHour: 7,
             startMin: 45,
@@ -98,6 +177,7 @@ export const userData = {
             endMin: 0,
           },
           {
+            isDone: false,
             id: 2,
             startHour: 8,
             startMin: 0,
@@ -105,6 +185,7 @@ export const userData = {
             endMin: 30,
           },
           {
+            isDone: false,
             id: 3,
             startHour: 15,
             startMin: 20,
