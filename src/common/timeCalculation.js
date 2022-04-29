@@ -1,34 +1,41 @@
-export const splitTime = () => {
-  const weekday = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  const month = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-  let currentTime = new Date();
-  console.log(typeof currentTime);
-  console.log(currentTime); // Mon Apr 25 2022 07:56
-  console.log(currentTime.getDate()); // 25 (day date)
-  console.log(weekday[currentTime.getDay()]); // Monday (week day)
-  console.log(currentTime.getFullYear()); // 2022 (year)
-  console.log(currentTime.getHours()); // 07 (hour)
-  console.log(currentTime.getMinutes()); // 56 (min)
-  console.log(month[currentTime.getMonth()]); // Apr (month)
+const weekday = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+const month = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+export const splitTime = (time) => {
+  // Mon Apr 25 2022 07:56
+  let splitDate = {
+    weekDay: weekday[time.getDay()],
+    month: month[time.getMonth()],
+    dayDate: time.getDate(),
+    year: time.getFullYear(),
+    hour: time.getHours(),
+    minute: time.getMinutes(),
+  };
+  return splitDate;
+};
+
+export const createDate = (month, dayDate, year, hour, minute) => {
+  // December 17, 1995 03:24:00
+  return new Date(`${month} ${dayDate}, ${year} ${hour}:${minute}:00`);
 };

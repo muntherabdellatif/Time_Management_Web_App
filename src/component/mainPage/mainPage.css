@@ -134,7 +134,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
   justify-content: center;
+}
+
+.showTime .showDailyTime .currentTime {
+  clip-path: polygon(30% 0%, 70% 0%, 100% 0, 100% 55%, 50% 100%, 50% 100%, 0 55%, 0 0);
+  position: absolute;
+  border-radius: 12px;
+  top: 0;
+  width: 52px;
+  text-align: center;
+  height: 42px;
+  background-color: var(--color4);
+  color: var(--color1);
+  padding-top: 7px;
 }
 
 .showTime .showDailyTime .hoursBar {
@@ -232,6 +246,32 @@
 
 .showTime .showDailyTime .detail-container .time-detail:not(:first-of-type) {
   margin-top: 20px;
+}
+
+.showTime .daysBar {
+  width: 455px;
+  display: flex;
+}
+
+.showTime .daysBar  .day{
+  width: 65px;
+    background-color: var(--color2);
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    border: 0.2px solid var(--color1);
+    font-size: 24px;
+}
+
+.showTime .daysBar  .day.active{
+  cursor: pointer;
+  color: var(--color4);
+}
+
+.showTime .daysBar  .day.active.selected{
+  background-color: var(--color4);
+  color: var(--color1);
 }
 
 /* ------------- sidebar ------------- */
