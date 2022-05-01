@@ -313,6 +313,94 @@ export const userData = {
         ],
       },
     },
+    {
+      id: 6,
+      name: "work 6",
+      description:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      progress: 30,
+      isDone: false,
+      relatedTo: "health",
+      times: {
+        repeat: "monthly",
+        isRepeat: true,
+        repeatTime: 2,
+        time: [
+          {
+            isDone: false,
+            id: 1,
+            startDate: new Date("Sun Apr 24 2022 4:30"),
+            duration: 40,
+          },
+          {
+            isDone: true,
+            id: 2,
+            startDate: new Date("Tue Apr 26 2022 10:30"),
+            duration: 130,
+          },
+          {
+            isDone: false,
+            id: 3,
+            startDate: new Date("Thu Apr 28 2022 14:30"),
+            duration: 110,
+          },
+          {
+            isDone: true,
+            id: 3,
+            startDate: new Date("Thu Apr 28 2022 11:00"),
+            duration: 180,
+          },
+          {
+            isDone: false,
+            id: 1,
+            startDate: new Date("Sun May 1 2022 4:30"),
+            duration: 40,
+          },
+          {
+            isDone: true,
+            id: 2,
+            startDate: new Date("Tue May 3 2022 10:30"),
+            duration: 130,
+          },
+          {
+            isDone: true,
+            id: 3,
+            startDate: new Date("Thu May 3 2022 14:30"),
+            duration: 110,
+          },
+          {
+            isDone: false,
+            id: 3,
+            startDate: new Date("Thu May 3 2022 11:00"),
+            duration: 180,
+          },
+          {
+            isDone: true,
+            id: 1,
+            startDate: new Date("Sun May 8 2022 4:30"),
+            duration: 40,
+          },
+          {
+            isDone: true,
+            id: 2,
+            startDate: new Date("Tue May 10 2022 10:30"),
+            duration: 130,
+          },
+          {
+            isDone: true,
+            id: 3,
+            startDate: new Date("Thu May 10 2022 14:30"),
+            duration: 110,
+          },
+          {
+            isDone: true,
+            id: 3,
+            startDate: new Date("Thu May 10 2022 11:00"),
+            duration: 180,
+          },
+        ],
+      },
+    },
   ],
   projects: [
     {

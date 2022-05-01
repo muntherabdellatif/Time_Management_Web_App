@@ -295,6 +295,42 @@
   color: var(--color1);
 }
 
+.showTime .timeContainer .monthDaysContainer {
+  width: 322px;
+  height: 170px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.showTime .timeContainer .monthDaysContainer .weekDays ,
+.showTime .timeContainer .monthDaysContainer .empty , 
+.showTime .timeContainer .monthDaysContainer .day {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin: 1px;
+  color: var(--color1);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.showTime .timeContainer .monthDaysContainer .day {
+  background-color: var(--color4);
+  color: var(--color1);
+}
+
+.showTime .timeContainer .monthDaysContainer .weekDays {
+  background-color: var(--color3);
+  color: var(--color1);
+}
+
+.showTime .timeContainer .monthDaysContainer .empty {
+  background-color: var(--color2);
+}
+
 /* ------------- sidebar ------------- */
 
 .side-bar {

@@ -1,4 +1,4 @@
-const weekday = [
+const weekDay = [
   "Sunday",
   "Monday",
   "Tuesday",
@@ -7,6 +7,8 @@ const weekday = [
   "Friday",
   "Saturday",
 ];
+
+export const weekDaysShort = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 const month = [
   "January",
@@ -27,8 +29,9 @@ export const splitTime = (time) => {
   // Mon Apr 25 2022 07:56
   let splitDate = {
     weekDayNum: time.getDay(),
-    weekDay: weekday[time.getDay()],
+    weekDay: weekDay[time.getDay()],
     month: month[time.getMonth()],
+    monthNum: time.getMonth(),
     dayDate: time.getDate(),
     year: time.getFullYear(),
     hour: time.getHours(),
@@ -128,3 +131,11 @@ export const makeMonthsArray = (times) => {
   }
   return monthsArray;
 };
+
+export const getDaysInMonth = (year, month) => {
+  return new Date(year, month, 0).getDate();
+}
+
+export const firstMonthDay = (year, month) => {
+  return new Date(year, month, 1).getDay();
+}

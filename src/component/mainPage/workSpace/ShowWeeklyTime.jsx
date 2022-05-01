@@ -1,12 +1,12 @@
-import React , {useState , useLayoutEffect} from "react";
-import { splitTime } from "../../../common/timeCalculation";
+import React , {useState } from "react";
+import { splitTime , weekDaysShort} from "../../../common/timeCalculation";
 import DaysBarUnit from "./daysBarUnit";
 import ShowDailyTime from "./showDailyTime"
 
 function ShowWeeklyTime (props) {
     let times = props.times ;
     const [selectedDay,setSelectedDay] = useState('Sun');
-    const weekDays = ['Sun', 'Mon' , 'Tue' , 'Wed' , 'Thu' , 'Fri' , 'Sat'];
+    const weekDays = weekDaysShort;
     let days = [];
     if (times) {
         days = times.map((day)=> splitTime(day.startDate).weekDay.substring(0, 3));
