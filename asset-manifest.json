@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Time_Management_Web_App/static/css/main.74bb46df.css",
+    "main.js": "/Time_Management_Web_App/static/js/main.74f96afc.js",
+    "index.html": "/Time_Management_Web_App/index.html",
+    "main.74bb46df.css.map": "/Time_Management_Web_App/static/css/main.74bb46df.css.map",
+    "main.74f96afc.js.map": "/Time_Management_Web_App/static/js/main.74f96afc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.74bb46df.css",
+    "static/js/main.74f96afc.js"
+  ]
+}
