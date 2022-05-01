@@ -104,6 +104,7 @@
 }
 
 .showTime .repeatTime {
+  position: relative;
   color: var(--color4);
   font-size: 22px;
   text-align: center;
@@ -127,6 +128,25 @@
   display: block;
   width: 100%;
   text-align: center;
+}
+
+.showTime .repeatTime .showController {
+  width: 100%;
+  position: absolute;
+  top: 70%;
+}
+
+.showTime .repeatTime .showController p {
+  display: inline-block;
+  margin: 30px;
+}
+
+.showTime .repeatTime .showController .icon {
+  cursor: pointer;
+}
+
+.showTime .repeatTime .showController .icon:hover {
+  color: var(--color3);
 }
 
 .showTime .showDailyTime {
@@ -251,6 +271,7 @@
 .showTime .daysBar {
   width: 455px;
   display: flex;
+  margin: 0 auto 10px;
 }
 
 .showTime .daysBar  .day{

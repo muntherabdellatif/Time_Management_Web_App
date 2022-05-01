@@ -7,7 +7,10 @@ function ShowWeeklyTime (props) {
     let times = props.times ;
     const [selectedDay,setSelectedDay] = useState('Sun');
     const weekDays = ['Sun', 'Mon' , 'Tue' , 'Wed' , 'Thu' , 'Fri' , 'Sat'];
-    let days = times.map((day)=> splitTime(day.startDate).weekDay.substring(0, 3));
+    let days = [];
+    if (times) {
+        days = times.map((day)=> splitTime(day.startDate).weekDay.substring(0, 3));
+    }
     if (!days.includes(selectedDay)) {
         setSelectedDay(days[0]);
     }
@@ -20,7 +23,7 @@ function ShowWeeklyTime (props) {
         Fri : [] ,
         Sat : [] ,
     }
-    times.forEach((time)=>{
+    times && times.forEach((time)=>{
         daysTime[`${splitTime(time.startDate).weekDay.substring(0, 3)}`].push(time);
         return("");
     });
@@ -32,7 +35,7 @@ function ShowWeeklyTime (props) {
     return (
         <>
             <div className="daysBar">
-                {weekDays.map((day,index)=>{
+                {weekDays && weekDays.map((day,index)=>{
                     return (
                         <DaysBarUnit 
                         day={day}
