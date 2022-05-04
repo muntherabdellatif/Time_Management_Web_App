@@ -25,7 +25,6 @@ function ShowWeeklyTime (props) {
     }
     times && times.forEach((time)=>{
         daysTime[`${splitTime(time.startDate).weekDay.substring(0, 3)}`].push(time);
-        return("");
     });
 
     const select =(day)=>{

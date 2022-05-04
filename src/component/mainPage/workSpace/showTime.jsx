@@ -4,7 +4,7 @@ import ShowWeeklyTime from "./ShowWeeklyTime";
 import ShowMonthlyTime from "./showMonthlyTime";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleChevronLeft ,faCircleChevronRight } from '@fortawesome/free-solid-svg-icons'
-import { makeDaysArray , makeWeeksArray , makeMonthsArray} from "../../../common/timeCalculation";
+import { makeDaysArray , makeWeeksArray , makeMonthsArray , splitTime , getDaysInMonth} from "../../../common/timeCalculation";
 
 function ShowTime (props) {
     const [showDay, setShowDay] = useState(0);
@@ -14,6 +14,8 @@ function ShowTime (props) {
     let allDayTimes = makeDaysArray(props.times.time);
     let allWeekTimes = makeWeeksArray(props.times.time);
     let allMonthTimes = makeMonthsArray(props.times.time);
+
+    let repeat = props.times.repeat;
 
     if (allDayTimes.length -1 < showDay) {
         setShowDay(0);
@@ -31,8 +33,53 @@ function ShowTime (props) {
     let showWeeklyTime = allWeekTimes[showWeek];
     let showMonthlyTime = allMonthTimes[showMonth];
 
-    let repeat = props.times.repeat;
-    let repeatTime = 0;
+    let timeObject = "";
+    let timeText = "" ;
+    if (repeat === "daily") {
+        timeObject = splitTime(showDailyTime[0].startDate);
+        timeText = `${timeObject.weekDay} ${timeObject.dayDate}/${timeObject.monthNum + 1}/${timeObject.year}`;
+    }else if (repeat === "monthly") {
+        timeObject = splitTime(showMonthlyTime[0].startDate);
+        timeText =  `${timeObject.monthNum + 1}/${timeObject.year}`;
+    }else if (repeat === "weekly") {
+        timeObject = splitTime(showWeeklyTime[0].startDate);
+        
+        let WeekFirstDayText = '';
+        let WeekFirstDay = "";
+        if (timeObject.dayDate > timeObject.weekDayNum) {
+            WeekFirstDay = timeObject.dayDate - timeObject.weekDayNum ;
+            WeekFirstDayText = `${WeekFirstDay}/${timeObject.monthNum + 1}/${timeObject.year}`;
+        }else {
+            let deff = timeObject.weekDayNum - timeObject.dayDate ;
+            if (timeObject.monthNum > 1) {
+                let lastMonthDaysNumber = getDaysInMonth(timeObject.year,timeObject.monthNum -1 );
+                WeekFirstDay = lastMonthDaysNumber - deff ;
+                WeekFirstDayText = `${WeekFirstDay}/${timeObject.monthNum}/${timeObject.year}`;
+            } else {
+                let lastMonthDaysNumber = getDaysInMonth(timeObject.year - 1, 11);
+                WeekFirstDay = lastMonthDaysNumber - deff ;
+                WeekFirstDayText = `${WeekFirstDay}/${timeObject.monthNum + 1}/${timeObject.year - 1}`;
+            }
+        }
+
+        let weekLastDay = "";
+        let weekLastDayText = "";
+        let thisMonthDaysNumber = getDaysInMonth(timeObject.year,timeObject.monthNum);
+        if (weekLastDay + 6 < thisMonthDaysNumber ) {
+            weekLastDay = WeekFirstDay + 6 ;
+            weekLastDayText = `${weekLastDay}/${timeObject.monthNum}/${timeObject.year}`;
+        }else {
+            weekLastDay = thisMonthDaysNumber - WeekFirstDay;
+            if (timeObject.monthNum === 11){
+                weekLastDayText = `${weekLastDay}/${1}/${timeObject.year + 1}`;
+            }else {
+                weekLastDayText = `${weekLastDay}/${timeObject.monthNum + 2}/${timeObject.year}`;
+            }
+        }
+        timeText = `${WeekFirstDayText} ${weekLastDayText}`;
+    }
+
+    let repeatTime = 1;
 
     if (repeat === "daily") {
         repeatTime = allDayTimes.length;
@@ -68,8 +115,10 @@ function ShowTime (props) {
     return (
         <div className="showTime">
             {
-                props.times.isRepeat && 
                 <div className="repeatTime">
+                    <div className="timeRange">
+                        <p>{timeText}</p>
+                    </div>
                     <p><span>{repeatTime}</span>
                     {` ${
                         repeat === "daily" ? 'day' :
